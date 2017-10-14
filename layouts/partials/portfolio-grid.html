@@ -7,19 +7,16 @@
                 <hr class="star-primary">
             </div>
         </div>
-        <div class="row">
-            {{ range $.Site.Data.projects }}
-            <div class="col-sm-4 portfolio-item">
-                <a href="#portfolioModal{{ .modalID }}" class="portfolio-link" data-toggle="modal">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <i class="fa fa-search-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="img/portfolio/{{ .img }}" class="img-responsive">
-                </a>
-            </div>
-            {{ end }}
+        <div class="row" style ="padding-top:20px;">
+          <div class="col-lg-4 col-lg-offset-2">
+              <p>{{ with .Site.Params.portfolio.left }}{{ . | markdownify }}{{ end }}</p>
+          </div>
+              <div class="col-lg-4">
+                  <p>{{ with .Site.Params.portfolio.right }}{{ . | markdownify }}{{ end }}</p>
+              </div>
+              <div class="col-lg-8 col-lg-offset-2" style="padding-top:30px;">
+                  <p>{{ with .Site.Params.portfolio.center }}{{ . | markdownify }}{{ end }}</p>
+              </div>
         </div>
     </div>
 </section>
